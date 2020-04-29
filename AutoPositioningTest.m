@@ -5,8 +5,8 @@ N_max = 10;
 
 if RANDOM_VVOD
     N = randi([4 10]);
-    N_max = 5;
-    N = 5;
+    N_max = 10;
+%     N = 5;
     razmer = razmer*10;
     SatPosTrue = zeros(2,N_max);
     SatPosTrue(1,2) = randi([0 razmer])/10;
@@ -28,15 +28,15 @@ else
     close
 end
 
-% [ R ] = MakeMeasurementsNotFull( SatPosTrue, 0, N_max, N );
-[ R ] = MakeMeasurements( SatPosTrue, 0.1 )
+[ R ] = MakeMeasurementsNotFull( SatPosTrue, 0, N_max, N );
+% [ R ] = MakeMeasurements( SatPosTrue, 0.1 )
 % 
 % % ׀וראול ַֽ
 % 
 % Sats   = AutoPositioning5( R );
 % Sats_n = nn_go_5_1( w1, b1, w2, b2, R ); 
-Sats_n = nn_go_5_2( w1, b1, w2, b2, w3, b3, R ); 
-% Sats_n = nn_go_inv_10max( w1, b1, w2, b2, w3, b3, R );
+% Sats_n = nn_go_5_2( w1, b1, w2, b2, w3, b3, R ); 
+Sats_n = nn_go_inv_10max( w1, b1, w2, b2, w3, b3, R );
 % 
 % 
 % % 
